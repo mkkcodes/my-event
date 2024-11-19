@@ -39,10 +39,10 @@ export default async function Event({ params }: Props) {
 
   return (
     <main>
-      <section className="relative overflow-hidden flex justify-center items-center py-14 md:py-20">
+      <section className="relative -hidden flex justify-center items-center py-14 md:py-20">
         <Image
           src={event.imageUrl}
-          className="object-cover blur-3xl z-0"
+          className="object-cover blur-lg z-0"
           alt="Event Background Image"
           fill
           quality={50}
@@ -58,15 +58,15 @@ export default async function Event({ params }: Props) {
             className="rounded-xl border-2 border-white/50 object-cover"
           />
 
-          <div className="flex flex-col">
-            <p className="text-white/75"></p>
-            {new Date(event.date).toLocaleDateString("en-US", {
-              weekday: "long",
-              month: "long",
-              day: "numeric",
-            })}
-
-            <H1 className="mb-2 mt-1 whitespace-nowrap lg:text-5xl">
+          <div className="flex flex-col text-white/75">
+            <p className="text-white/75">
+              {new Date(event.date).toLocaleDateString("en-US", {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+            <H1 className="mb-2 mt-1 text-white/75 whitespace-nowrap lg:text-5xl">
               {event.name}
             </H1>
 
@@ -74,7 +74,7 @@ export default async function Event({ params }: Props) {
               Organized by <span className="italic">{event.organizerName}</span>
             </p>
 
-            <button className="bg-white/20 text-lg capitalize backdrop-blur mt-5 lg:mt-auto w-full py-2 rounded-md border-white/10 border-2 state-effects">
+            <button className="bg-white/20 text-lg capitalize backdrop-blur mt-5 lg:mt-auto w-full py-2 rounded-md text-white/75 border-white/10 border-2 state-effects">
               Get Tickets
             </button>
           </div>
@@ -106,7 +106,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function SectionParagraph({ children }: { children: React.ReactNode }) {
   return (
-    <p className="max-w-4xl mx-auto text-lg leading-8 text-white/75">
+    <p className="max-w-4xl mx-auto text-lg leading-8 dark:text-white/75">
       {children}
     </p>
   );
