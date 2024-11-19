@@ -39,7 +39,7 @@ export default async function Event({ params }: Props) {
 
   return (
     <main>
-      <section className="relative -hidden flex justify-center items-center py-14 md:py-20">
+      <section className="relative overflow-hidden flex justify-center items-center py-14 md:py-20">
         <Image
           src={event.imageUrl}
           className="object-cover blur-lg z-0"
