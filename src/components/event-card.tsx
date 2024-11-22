@@ -54,14 +54,14 @@ export default function EventCard({ event }: EventCardProps) {
         </div>
 
         <section
-          className="absolute flex flex-col left-[12px] top-[12px] h-[45px] 
-      bg-black/30 rounded-md"
+          className="absolute flex flex-col left-[12px] top-[12px] h-[45px] items-center w-[45px]
+      bg-black/75 rounded-md"
         >
           <p className="text-xl text-white font-bold -mb-[5px]">
             {/* turn date into day of the month with leading zero */}
             {new Date(event.date).getDate().toString().padStart(2, "0")}
           </p>
-          <p className="text-xs uppercase text-white dark:text-accent">
+          <p className="text-xs uppercase text-white">
             {/* turn date into month abbreviation */}
             {new Date(event.date).toLocaleString("en-us", { month: "short" })}
           </p>
